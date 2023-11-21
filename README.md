@@ -13,7 +13,7 @@ This repository contains the backend code for the "JobHub Connect" project, deve
 
 1. **Clone the repository:**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/JohnKamaujk/JobHub_Connect.git
 
 ## Install dependencies:
     npm install
