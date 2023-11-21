@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 require("dotenv").config();
 var cors = require("cors");
+const errorHandler = require("./middleware/error");
 
 const port = process.env.PORT || 8000;
 const uri = process.env.ATLAS_URI;
@@ -32,6 +33,9 @@ app.use(
 );
 app.use(cookieParser());
 app.use(cors());
+
+//custom-made error handling middleware
+app.use(errorHandler);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
