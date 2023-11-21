@@ -18,7 +18,7 @@ mongoose
     useFindAndModify: false,
   })
   .then(() => console.log("DB connected successfully"))
-  .catch((err) => console.log(err));
+  .catch((err) => console.log("MongoDB connection failed", err.message));
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
