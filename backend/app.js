@@ -7,6 +7,7 @@ const cookieParser = require("cookie-parser");
 require("dotenv").config();
 var cors = require("cors");
 const errorHandler = require("./middleware/error");
+const authRoutes = require("./routes/authRoutes");
 
 const port = process.env.PORT || 8000;
 const uri = process.env.ATLAS_URI;
@@ -34,10 +35,7 @@ app.use(
 app.use(cookieParser());
 app.use(cors());
 
-//Routes
-app.get("/", (req, res) => {
-  res.send("Hello from noddejs");
-});
+app.use("/api", authRoutes);
 
 //custom-made error handling middleware
 app.use(errorHandler);
