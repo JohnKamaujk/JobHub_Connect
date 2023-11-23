@@ -34,6 +34,11 @@ app.use(
 app.use(cookieParser());
 app.use(cors());
 
+//Routes
+app.get("/", (req, res) => {
+  res.send("Hello from noddejs");
+});
+
 //custom-made error handling middleware
 app.use(errorHandler);
 
