@@ -54,3 +54,10 @@ const sendTokenResponse = async (user, codeStatus, res) => {
     .json({ success: true, token, user });
 };
 
+exports.logout = (req, res, next) => {
+  res.clearCookie("token");
+  res.status(200).json({
+    success: true,
+    message: "logged out",
+  });
+};
