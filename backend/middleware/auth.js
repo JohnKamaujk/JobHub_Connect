@@ -16,11 +16,9 @@ exports.isAuthenticated = async (req, res, next) => {
   }
 };
 
-exports.userProfile = async (req, res, next) => {
-  const user = await User.findById(req.user.id).select("-password");
-
-  res.status(200).json({
-    success: true,
-    user,
-  });
+exports.isAdmin = (req, res, next) => {
+  if (req.user.role === 0) {
+    return next(new ErrorResponse("Access denied, you must an admin", 401));
+  }
+  next();
 };
