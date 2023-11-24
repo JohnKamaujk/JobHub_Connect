@@ -15,3 +15,12 @@ exports.isAuthenticated = async (req, res, next) => {
     return next(new ErrorResponse("Not authorized to access this route", 401));
   }
 };
+
+exports.userProfile = async (req, res, next) => {
+  const user = await User.findById(req.user.id).select("-password");
+
+  res.status(200).json({
+    success: true,
+    user,
+  });
+};
