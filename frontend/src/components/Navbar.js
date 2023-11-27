@@ -17,7 +17,7 @@ import { useTheme } from "@emotion/react";
 
 const pages = ["Home", "Log In"];
 
-function Navbar() {
+const Navbar = () => {
   const { palette } = useTheme();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -196,5 +196,5 @@ function Navbar() {
       </Container>
     </AppBar>
   );
-}
+};
 export default Navbar;
