@@ -1,13 +1,13 @@
 import { createTheme } from "@mui/material/styles";
-import { blue, lightBlue } from "@mui/material/colors";
+import { purple, deepPurple } from "@mui/material/colors";
 
 export const theme = createTheme({
   palette: {
     primary: {
-      main: blue[500],
+      main: deepPurple[500],
     },
     secondary: {
-      main: lightBlue[800],
+      main: purple[800],
       midNightBlue: "#003366",
     },
   },
