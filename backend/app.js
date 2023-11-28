@@ -9,6 +9,7 @@ var cors = require("cors");
 const errorHandler = require("./middleware/error");
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
+const jobTypeRoutes = require("./routes/jobTypeRoutes");
 
 const port = process.env.PORT || 8000;
 const uri = process.env.ATLAS_URI;
@@ -38,6 +39,7 @@ app.use(cors());
 
 app.use("/api", authRoutes);
 app.use("/api", userRoutes);
+app.use("/api", jobTypeRoutes);
 
 //custom-made error handling middleware
 app.use(errorHandler);
