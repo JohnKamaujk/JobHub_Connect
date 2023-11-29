@@ -9,11 +9,14 @@ import {
   useTheme,
   Typography,
 } from "@mui/material";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { jobLoadAction } from "../redux/actions/jobAction";
 import { useParams } from "react-router-dom";
 
 const Home = () => {
+  const { jobs, setUniqueLocation, pages, loading } = useSelector(
+    (state) => state.loadJobs
+  );
   const { palette } = useTheme();
   const dispatch = useDispatch();
   const { keyword, location } = useParams();
@@ -47,7 +50,9 @@ const Home = () => {
                 </Box>
               </Card>
             </Box>
-            <Box sx={{ flex: 5, p: 2 }}></Box>
+            <Box sx={{ flex: 5, p: 2 }}>
+              {jobs && jobs.map((job, idx) => <h1 key={idx}>{job.title}</h1>)}
+            </Box>
           </Stack>
         </Container>
       </Box>
