@@ -8,6 +8,7 @@ import {
   Card,
   useTheme,
   Typography,
+  Pagination,
 } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { jobLoadAction } from "../redux/actions/jobAction";
@@ -65,6 +66,13 @@ const Home = () => {
                     location={job.location}
                   />
                 ))}
+              <Stack spacing={2}>
+                <Pagination
+                  page={page}
+                  count={pages === 0 ? 1 : pages}
+                  onChange={(event, value) => setPage(value)}
+                />
+              </Stack>
             </Box>
           </Stack>
         </Container>
