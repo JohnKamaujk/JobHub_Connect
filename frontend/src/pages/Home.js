@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { jobLoadAction } from "../redux/actions/jobAction";
 import { useParams } from "react-router-dom";
 import CardElement from "../components/CardElement";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const { jobs, setUniqueLocation, pages, loading } = useSelector(
@@ -77,6 +78,7 @@ const Home = () => {
           </Stack>
         </Container>
       </Box>
+      <Footer />
     </>
   );
 };
