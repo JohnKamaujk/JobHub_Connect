@@ -4,6 +4,7 @@ import { useTheme } from "@mui/material/styles";
 
 const Footer = () => {
   const { palette } = useTheme();
+  const currentYear = new Date().getFullYear();
   return (
     <>
       <Box
@@ -19,7 +20,7 @@ const Footer = () => {
           component="span"
           sx={{ color: palette.primary.main, fontWeight: 700 }}
         >
-          All rights reserved! 2023.
+          All rights reserved! {currentYear}.
         </Box>
       </Box>
     </>
