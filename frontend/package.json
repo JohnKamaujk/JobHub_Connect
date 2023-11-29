@@ -50,5 +50,6 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@redux-devtools/extension": "^3.2.6"
-  }
+  },
+  "proxy": "http://localhost:8000"
 }
