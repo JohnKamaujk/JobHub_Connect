@@ -12,6 +12,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { jobLoadAction } from "../redux/actions/jobAction";
 import { useParams } from "react-router-dom";
+import CardElement from "../components/CardElement";
 
 const Home = () => {
   const { jobs, setUniqueLocation, pages, loading } = useSelector(
@@ -51,7 +52,19 @@ const Home = () => {
               </Card>
             </Box>
             <Box sx={{ flex: 5, p: 2 }}>
-              {jobs && jobs.map((job, idx) => <h1 key={idx}>{job.title}</h1>)}
+              {jobs &&
+                jobs.map((job, idx) => (
+                  <CardElement
+                    key={idx}
+                    id={job._id}
+                    jobTitle={job.title}
+                    description={job.description}
+                    category={
+                      job.jobType ? job.jobType.jobTypeName : "No category"
+                    }
+                    location={job.location}
+                  />
+                ))}
             </Box>
           </Stack>
         </Container>
