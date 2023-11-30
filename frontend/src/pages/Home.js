@@ -16,6 +16,8 @@ import { useParams } from "react-router-dom";
 import CardElement from "../components/CardElement";
 import Footer from "../components/Footer";
 import LoadingBox from "../components/LoadingBox";
+import SelectComponent from "../components/SelectComponent";
+import { jobTypeLoadAction } from "../redux/actions/jobTypeAction";
 
 const Home = () => {
   const { jobs, setUniqueLocation, pages, loading } = useSelector(
@@ -32,6 +34,13 @@ const Home = () => {
     dispatch(jobLoadAction(page, keyword, cat, location));
   }, [page, keyword, cat, location]);
 
+  useEffect(() => {
+    dispatch(jobTypeLoadAction());
+  }, []);
+
+  const handleChangeCategory = (e) => {
+    setCat(e.target.value);
+  };
   return (
     <>
       <Box sx={{ bgcolor: "#fafafa", minHeight: "100vh" }}>
@@ -52,6 +61,10 @@ const Home = () => {
                     Filter job by category
                   </Typography>
                 </Box>
+                <SelectComponent
+                  handleChangeCategory={handleChangeCategory}
+                  cat={cat}
+                />
               </Card>
             </Box>
             <Box sx={{ flex: 5, p: 2 }}>
