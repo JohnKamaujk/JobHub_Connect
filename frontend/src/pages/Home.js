@@ -15,6 +15,7 @@ import { jobLoadAction } from "../redux/actions/jobAction";
 import { useParams } from "react-router-dom";
 import CardElement from "../components/CardElement";
 import Footer from "../components/Footer";
+import LoadingBox from "../components/LoadingBox";
 
 const Home = () => {
   const { jobs, setUniqueLocation, pages, loading } = useSelector(
@@ -54,10 +55,26 @@ const Home = () => {
               </Card>
             </Box>
             <Box sx={{ flex: 5, p: 2 }}>
-              {jobs &&
-                jobs.map((job, idx) => (
+              {loading ? (
+                <LoadingBox />
+              ) : jobs && jobs.length === 0 ? (
+                <>
+                  <Box
+                    sx={{
+                      minHeight: "350px",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <h2>No result found!</h2>
+                  </Box>
+                </>
+              ) : (
+                jobs &&
+                jobs.map((job, i) => (
                   <CardElement
-                    key={idx}
+                    key={i}
                     id={job._id}
                     jobTitle={job.title}
                     description={job.description}
@@ -66,7 +83,8 @@ const Home = () => {
                     }
                     location={job.location}
                   />
-                ))}
+                ))
+              )}
               <Stack spacing={2}>
                 <Pagination
                   page={page}
