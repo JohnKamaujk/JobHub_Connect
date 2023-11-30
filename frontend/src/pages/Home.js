@@ -3,26 +3,31 @@ import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import {
   Box,
-  Container,
-  Stack,
   Card,
-  useTheme,
-  Typography,
+  Container,
+  ListItemIcon,
+  MenuItem,
+  MenuList,
   Pagination,
+  Stack,
+  Typography,
+  useTheme,
 } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { jobLoadAction } from "../redux/actions/jobAction";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import CardElement from "../components/CardElement";
 import Footer from "../components/Footer";
 import LoadingBox from "../components/LoadingBox";
 import SelectComponent from "../components/SelectComponent";
 import { jobTypeLoadAction } from "../redux/actions/jobTypeAction";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 const Home = () => {
   const { jobs, setUniqueLocation, pages, loading } = useSelector(
     (state) => state.loadJobs
   );
+
   const { palette } = useTheme();
   const dispatch = useDispatch();
   const { keyword, location } = useParams();
@@ -41,6 +46,7 @@ const Home = () => {
   const handleChangeCategory = (e) => {
     setCat(e.target.value);
   };
+
   return (
     <>
       <Box sx={{ bgcolor: "#fafafa", minHeight: "100vh" }}>
@@ -65,6 +71,36 @@ const Home = () => {
                   handleChangeCategory={handleChangeCategory}
                   cat={cat}
                 />
+              </Card>
+
+              {/* jobs by location */}
+              <Card sx={{ minWidth: 150, mb: 3, mt: 3, p: 2 }}>
+                <Box sx={{ pb: 2 }}>
+                  <Typography
+                    component="h4"
+                    sx={{ color: palette.secondary.main, fontWeight: 600 }}
+                  >
+                    Filter job by location
+                  </Typography>
+                  <MenuList>
+                    {setUniqueLocation &&
+                      setUniqueLocation.map((location, i) => (
+                        <MenuItem key={i}>
+                          <ListItemIcon>
+                            <LocationOnIcon
+                              sx={{
+                                color: palette.secondary.main,
+                                fontSize: 18,
+                              }}
+                            />
+                          </ListItemIcon>
+                          <Link to={`/search/location/${location}`}>
+                            {location}
+                          </Link>
+                        </MenuItem>
+                      ))}
+                  </MenuList>
+                </Box>
               </Card>
             </Box>
             <Box sx={{ flex: 5, p: 2 }}>
