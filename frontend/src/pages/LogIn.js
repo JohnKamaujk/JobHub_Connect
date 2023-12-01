@@ -23,7 +23,16 @@ const validationSchema = yup.object({
 });
 
 const LogIn = () => {
+  const { isAuthenticated } = useSelector((state) => state.signIn);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/user/dashboard");
+    }
+  }, [isAuthenticated]);
+
   const formik = useFormik({
     initialValues: {
       email: "",
