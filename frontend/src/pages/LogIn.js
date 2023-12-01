@@ -7,6 +7,9 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { useDispatch, useSelector } from "react-redux";
+import { userSignInAction } from "../redux/actions/userAction";
+import { useNavigate } from "react-router-dom";
 
 const validationSchema = yup.object({
   email: yup
@@ -20,6 +23,7 @@ const validationSchema = yup.object({
 });
 
 const LogIn = () => {
+  const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -27,7 +31,8 @@ const LogIn = () => {
     },
     validationSchema: validationSchema,
     onSubmit: (values, actions) => {
-      alert(JSON.stringify(values, null, 2));
+      //alert(JSON.stringify(values, null, 2));
+      dispatch(userSignInAction(values));
       actions.resetForm();
     },
   });
