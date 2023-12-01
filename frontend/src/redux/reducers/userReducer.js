@@ -11,7 +11,7 @@ import {
   USER_SIGNIN_REQUEST,
   USER_SIGNIN_RESET,
   USER_SIGNIN_SUCCESS,
-} from "../constants/userConstant.js";
+} from "../constants/userConstant";
 
 export const userReducerSignIn = (state = {}, action) => {
   switch (action.type) {
