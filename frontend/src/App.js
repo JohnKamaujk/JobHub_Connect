@@ -11,6 +11,7 @@ import { ProSidebarProvider } from "react-pro-sidebar";
 import LogIn from "./pages/LogIn";
 import UserDashboard from "./pages/user/UserDashboard";
 import UserRoute from "./components/UserRoute";
+import AdminRoute from "./components/AdminRoute";
 import Layout from "./pages/global/Layout";
 import UserJobsHistory from "./pages/user/UserJobsHistory";
 import UserInfoDashboard from "./pages/user/UserInfoDashboard";
