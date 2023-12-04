@@ -11,7 +11,7 @@ const StatComponent = ({ value, icon, description, money }) => {
   const { palette } = useTheme();
   return (
     <>
-      <Card sx={{ bgcolor: palette.secondary.midNightBlue, width: "100%" }}>
+      <Card sx={{ bgcolor: palette.secondary.midNightPurple, width: "100%" }}>
         <CardContent>
           <IconButton sx={{ bgcolor: palette.primary.main, mb: 2 }}>
             {icon}
