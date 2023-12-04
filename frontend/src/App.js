@@ -12,9 +12,11 @@ import LogIn from "./pages/LogIn";
 import UserDashboard from "./pages/user/UserDashboard";
 import UserRoute from "./components/UserRoute";
 import Layout from "./pages/global/Layout";
+import UserJobsHistory from "./pages/user/UserJobsHistory";
 
 //HOC
 const UserDashboardHOC = Layout(UserDashboard);
+const UserJobsHistoryHOC = Layout(UserJobsHistory);
 
 const App = () => {
   return (
@@ -34,6 +36,14 @@ const App = () => {
                 element={
                   <UserRoute>
                     <UserDashboardHOC />
+                  </UserRoute>
+                }
+              />
+              <Route
+                path="/user/jobs"
+                element={
+                  <UserRoute>
+                    <UserJobsHistoryHOC />
                   </UserRoute>
                 }
               />
