@@ -130,7 +130,7 @@ const Navbar = () => {
               textDecoration: "none",
             }}
           >
-            JOBHUB CONNECT
+            JOB PORTAL
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {/* menu desktop */}
@@ -176,7 +176,20 @@ const Navbar = () => {
                     }}
                     to="/admin/dashboard"
                   >
-                    Dashboard
+                    Admin Dashboard
+                  </Link>
+                </Typography>
+              </MenuItem>
+              <MenuItem onClick={handleCloseUserMenu}>
+                <Typography textAlign="center">
+                  <Link
+                    style={{
+                      textDecoration: "none",
+                      color: palette.primary.main,
+                    }}
+                    to="/user/dashboard"
+                  >
+                    User Dashboard
                   </Link>
                 </Typography>
               </MenuItem>
