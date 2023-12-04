@@ -14,11 +14,13 @@ import UserRoute from "./components/UserRoute";
 import Layout from "./pages/global/Layout";
 import UserJobsHistory from "./pages/user/UserJobsHistory";
 import UserInfoDashboard from "./pages/user/UserInfoDashboard";
+import AdminDashboard from "./pages/admin/AdminDashboard";
 
 //HOC
 const UserDashboardHOC = Layout(UserDashboard);
 const UserJobsHistoryHOC = Layout(UserJobsHistory);
 const UserInfoDashboardHOC = Layout(UserInfoDashboard);
+const AdminDashboardHOC = Layout(AdminDashboard);
 
 const App = () => {
   return (
@@ -33,6 +35,14 @@ const App = () => {
               <Route path="/search/location/:location" element={<Home />} />
               <Route path="/search/:keyword" element={<Home />} />
               <Route path="/login" element={<LogIn />} />
+              <Route
+                path="/admin/dashboard"
+                element={
+                  <AdminRoute>
+                    <AdminDashboardHOC />
+                  </AdminRoute>
+                }
+              />
               <Route
                 path="/user/dashboard"
                 element={
