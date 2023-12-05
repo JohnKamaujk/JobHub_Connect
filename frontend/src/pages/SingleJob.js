@@ -18,17 +18,6 @@ const SingleJob = () => {
     dispatch(jobLoadSingleAction(id));
   }, [id]);
 
-  const applyForAJob = () => {
-    dispatch(
-      userApplyJobAction({
-        title: singleJob && singleJob.title,
-        description: singleJob && singleJob.description,
-        salary: singleJob && singleJob.salary,
-        location: singleJob && singleJob.location,
-      })
-    );
-  };
-
   return (
     <>
       <Box sx={{ bgcolor: "#fafafa" }}>
@@ -58,7 +47,7 @@ const SingleJob = () => {
                         <Box component="span" sx={{ fontWeight: 700 }}>
                           Category
                         </Box>
-                        :{" "}
+                        :
                         {singleJob && singleJob.jobType
                           ? singleJob.jobType.jobTypeName
                           : "No category"}
@@ -79,12 +68,8 @@ const SingleJob = () => {
               </Box>
               <Box sx={{ flex: 1, p: 2 }}>
                 <Card sx={{ p: 2 }}>
-                  <Button
-                    onClick={applyForAJob}
-                    sx={{ fontSize: "13px" }}
-                    variant="contained"
-                  >
-                    Applied for this Job
+                  <Button sx={{ fontSize: "13px" }} variant="contained">
+                    Apply for this Job
                   </Button>
                 </Card>
               </Box>

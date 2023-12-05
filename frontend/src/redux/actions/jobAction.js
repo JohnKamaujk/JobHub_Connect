@@ -6,7 +6,7 @@ import {
   JOB_LOAD_SINGLE_REQUEST,
   JOB_LOAD_SINGLE_SUCCESS,
   JOB_LOAD_SUCCESS,
-} from "../constants/jobconstant";
+} from "../constants/jobConstant";
 
 export const jobLoadAction =
   (pageNumber, keyword = "", cat = "", location = "") =>

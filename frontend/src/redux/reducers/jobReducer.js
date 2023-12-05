@@ -7,7 +7,7 @@ import {
   JOB_LOAD_SINGLE_RESET,
   JOB_LOAD_SINGLE_SUCCESS,
   JOB_LOAD_SUCCESS,
-} from "../constants/jobconstant";
+} from "../constants/jobConstant";
 
 export const loadJobReducer = (state = { jobs: [] }, action) => {
   switch (action.type) {
