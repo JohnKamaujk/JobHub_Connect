@@ -3,9 +3,9 @@ import { Box, Container } from "@mui/system";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import Footer from "../components/Footer";
-import LoadingBox from "../components/LoadingBox";
-import Navbar from "../components/Navbar";
+import Footer from "../component/Footer";
+import LoadingBox from "../component/LoadingBox";
+import Navbar from "../component/Navbar";
 import { jobLoadSingleAction } from "../redux/actions/jobAction";
 import Button from "@mui/material/Button";
 import { userApplyJobAction } from "../redux/actions/userAction";
@@ -17,6 +17,17 @@ const SingleJob = () => {
   useEffect(() => {
     dispatch(jobLoadSingleAction(id));
   }, [id]);
+
+  const applyForAJob = () => {
+    dispatch(
+      userApplyJobAction({
+        title: singleJob && singleJob.title,
+        description: singleJob && singleJob.description,
+        salary: singleJob && singleJob.salary,
+        location: singleJob && singleJob.location,
+      })
+    );
+  };
 
   return (
     <>
@@ -68,7 +79,11 @@ const SingleJob = () => {
               </Box>
               <Box sx={{ flex: 1, p: 2 }}>
                 <Card sx={{ p: 2 }}>
-                  <Button sx={{ fontSize: "13px" }} variant="contained">
+                  <Button
+                    onClick={applyForAJob}
+                    sx={{ fontSize: "13px" }}
+                    variant="contained"
+                  >
                     Apply for this Job
                   </Button>
                 </Card>
