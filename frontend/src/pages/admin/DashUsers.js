@@ -94,7 +94,7 @@ const DashUsers = () => {
             Create user
           </Button>
         </Box>
-        <Paper sx={{ bgcolor: "secondary.midNightBlue" }}>
+        <Paper sx={{ bgcolor: "secondary.midNightPurple" }}>
           <Box sx={{ height: 400, width: "100%" }}>
             <DataGrid
               sx={{
