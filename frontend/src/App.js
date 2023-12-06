@@ -22,6 +22,7 @@ import DashUsers from "./pages/admin/DashUsers";
 import DashJobs from "./pages/admin/DashJobs";
 import DashCategory from "./pages/admin/DashCategory";
 import DashCreateJob from "./pages/admin/DashCreateJob";
+import DashCreateCategory from "./pages/admin/DashCreateCategory";
 
 //HOC
 const UserDashboardHOC = Layout(UserDashboard);
