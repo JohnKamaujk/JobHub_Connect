@@ -10,7 +10,7 @@ const Layout =
       <>
         <div style={{ display: "flex", minHeight: "100vh" }}>
           <SidebarAdm />
-          <Box sx={{ width: "100%", bgcolor: "#002952" }}>
+          <Box sx={{ width: "100%", bgcolor: "#380952" }}>
             <HeaderTop />
             <Box sx={{ p: 3 }}>
               <Component {...props} />
