@@ -99,7 +99,6 @@ const DashJobs = () => {
       </Typography>
       <Box sx={{ pb: 2, display: "flex", justifyContent: "right" }}>
         <Button variant="contained" color="success" startIcon={<AddIcon />}>
-          {" "}
           <Link
             style={{ color: "white", textDecoration: "none" }}
             to="/admin/job/create"
