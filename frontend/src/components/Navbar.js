@@ -16,6 +16,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useTheme } from "@emotion/react";
 import { useDispatch, useSelector } from "react-redux";
 import { userLogoutAction } from "../redux/actions/userAction";
+import { DarkMode, LightMode } from "@mui/icons-material";
+import { toggleActionTheme } from "../redux/actions/themeAction";
 
 const pages = ["Home", "Log In"];
 
@@ -54,7 +56,7 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ bgcolor: palette.primary.main }}>
       <Container>
         {/* principal Menu */}
         <Toolbar disableGutters>
@@ -74,7 +76,7 @@ const Navbar = () => {
               textDecoration: "none",
             }}
           >
-            JOB PORTAL
+            JOBHUB CONNECT
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -130,7 +132,7 @@ const Navbar = () => {
               textDecoration: "none",
             }}
           >
-            JOB PORTAL
+            JOBHUB CONNECT
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {/* menu desktop */}
@@ -143,15 +145,48 @@ const Navbar = () => {
                 Home
               </Link>
             </Button>
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: "white", display: "block" }}
+            >
+              <Link
+                to="/register"
+                style={{ color: "white", textDecoration: "none" }}
+              >
+                Register
+              </Link>
+            </Button>
           </Box>
+          <IconButton
+            sx={{ mr: 4 }}
+            onClick={() => dispatch(toggleActionTheme())}
+          >
+            {palette.mode === "dark" ? (
+              <DarkMode sx={{ color: "#ffffff", fontSize: "25px" }} />
+            ) : (
+              <LightMode sx={{ color: "#ffffff", fontSize: "25px" }} />
+            )}
+          </IconButton>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="" />
+                <Avatar
+                  sx={{ color: palette.primary.white }}
+                  alt="Remy Sharp"
+                  src=""
+                />
               </IconButton>
             </Tooltip>
             <Menu
+              PaperProps={{
+                sx: {
+                  "& 	.MuiMenu-list": {
+                    bgcolor: "primary.white",
+                    color: "white",
+                  },
+                },
+              }}
               sx={{ mt: "45px" }}
               id="menu-appbar"
               anchorEl={anchorElUser}
@@ -172,7 +207,7 @@ const Navbar = () => {
                   <Link
                     style={{
                       textDecoration: "none",
-                      color: palette.primary.main,
+                      color: palette.secondary.main,
                     }}
                     to="/admin/dashboard"
                   >
@@ -185,7 +220,7 @@ const Navbar = () => {
                   <Link
                     style={{
                       textDecoration: "none",
-                      color: palette.primary.main,
+                      color: palette.secondary.main,
                     }}
                     to="/user/dashboard"
                   >
@@ -200,7 +235,7 @@ const Navbar = () => {
                     <Link
                       style={{
                         textDecoration: "none",
-                        color: palette.primary.main,
+                        color: palette.secondary.main,
                       }}
                       to="/login"
                     >
@@ -213,7 +248,7 @@ const Navbar = () => {
                   <Typography
                     style={{
                       textDecoration: "none",
-                      color: palette.primary.main,
+                      color: palette.secondary.main,
                     }}
                     textAlign="center"
                   >
