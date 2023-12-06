@@ -32,6 +32,7 @@ const DashUsersHOC = Layout(DashUsers);
 const DashJobsHOC = Layout(DashJobs);
 const DashCategoryHOC = Layout(DashCategory);
 const DashCreateJobHOC = Layout(DashCreateJob);
+const DashCreateCategoryHOC = Layout(DashCreateCategory);
 
 const App = () => {
   return (
@@ -85,6 +86,14 @@ const App = () => {
                 element={
                   <AdminRoute>
                     <DashCreateJobHOC />
+                  </AdminRoute>
+                }
+              />
+              <Route
+                path="/admin/category/create"
+                element={
+                  <AdminRoute>
+                    <DashCreateCategoryHOC />
                   </AdminRoute>
                 }
               />
