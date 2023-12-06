@@ -17,7 +17,6 @@ import { useTheme } from "@emotion/react";
 import { useDispatch, useSelector } from "react-redux";
 import { userLogoutAction } from "../redux/actions/userAction";
 import { DarkMode, LightMode } from "@mui/icons-material";
-import { toggleActionTheme } from "../redux/actions/themeAction";
 
 const pages = ["Home", "Log In"];
 
@@ -157,10 +156,7 @@ const Navbar = () => {
               </Link>
             </Button>
           </Box>
-          <IconButton
-            sx={{ mr: 4 }}
-            onClick={() => dispatch(toggleActionTheme())}
-          >
+          <IconButton sx={{ mr: 4 }}>
             {palette.mode === "dark" ? (
               <DarkMode sx={{ color: "#ffffff", fontSize: "25px" }} />
             ) : (
