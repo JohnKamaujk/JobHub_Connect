@@ -21,6 +21,7 @@ import SingleJob from "./pages/SingleJob";
 import DashUsers from "./pages/admin/DashUsers";
 import DashJobs from "./pages/admin/DashJobs";
 import DashCategory from "./pages/admin/DashCategory";
+import DashCreateJob from "./pages/admin/DashCreateJob";
 
 //HOC
 const UserDashboardHOC = Layout(UserDashboard);
@@ -30,6 +31,7 @@ const AdminDashboardHOC = Layout(AdminDashboard);
 const DashUsersHOC = Layout(DashUsers);
 const DashJobsHOC = Layout(DashJobs);
 const DashCategoryHOC = Layout(DashCategory);
+const DashCreateJobHOC = Layout(DashCreateJob);
 
 const App = () => {
   return (
@@ -75,6 +77,14 @@ const App = () => {
                 element={
                   <AdminRoute>
                     <DashCategoryHOC />
+                  </AdminRoute>
+                }
+              />
+              <Route
+                path="/admin/job/create"
+                element={
+                  <AdminRoute>
+                    <DashCreateJobHOC />
                   </AdminRoute>
                 }
               />
