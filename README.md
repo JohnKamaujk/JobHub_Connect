@@ -1,52 +1,27 @@
-# JobHub Connect - Backend
+# JobHub Connect-mern-stack
+This is a Full stack job App made with MERN Stack, MUI, Datagrid, cookie, react-google-charts etc
 
-This repository contains the backend code for the "JobHub Connect" project, developed using Express.js and MongoDB.
+##### To use this app: clone this repo, in the backend root folder create a .env file with these variables PORT=9000 DATABASE=YOUR_MONGO_URL JWT_SECRET=fidbfbFCDSm1558 NODE_ENV=development if in development mode and NODE_ENV=production if you're deploying your App; after that, run "npm install" in the bonus root folder. Go inside frontend folder in bonus folder, run "npm install "
 
-## Features
+![My Image](frontend/src/images/jobhub.png)
 
-- **User Authentication:** Secure user authentication using JSON Web Tokens (JWT).
-- **Job Listings Management:** API endpoints for creating, updating, and deleting job listings.
-- **User Dashboard:** Handling user-specific data such as applied jobs and preferences.
-- **MongoDB Integration:** Data storage and retrieval using MongoDB for scalability and flexibility.
+![My Image](frontend/src/images/dashboardjob.png)
 
-## Installation
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/JohnKamaujk/JobHub_Connect.git
 
-## Install dependencies:
-    npm install
-
-## Set up environment variables:
-    Create a .env file based on the provided .env.example.
-    Add MongoDB connection details and any other required variables.
-
-## Start the server:
-    npm start
-
-## API Endpoints
-    User Authentication:
-
-    /api/user/signup (POST): Create a new user account.
-    /api/user/login (POST): Authenticate and generate a JWT.
-    Job Listings:
-
-    /api/jobs (GET): Get all job listings.
-    /api/jobs/:id (GET): Get details of a specific job.
-    /api/jobs (POST): Create a new job listing.
-    /api/jobs/:id (PUT): Update details of a specific job.
-    /api/jobs/:id (DELETE): Delete a job listing.
-    User Dashboard:
-
-    /api/user/dashboard (GET): Get user-specific data (applied jobs, preferences).
-    Environment Variables
-    PORT: Port for the Express.js server.
-    MONGODB_URI: MongoDB connection URI.
-
-## Contributing
-We welcome contributions! Please follow our contribution guidelines.
-
-## License
-This project is licensed under the MIT License.
+# Features:
+##### - Software Architecture: MVC pattern;
+##### - HOC (High Order Component);
+##### - Dark & Light theme mode with MUI (Material UI);
+##### - Admin & user dashboard, pagination, Datagrid, Download in CSV, etc;
+##### - Open & close dashboard sidebar;
+##### - Admin can create jobs, create category, etc.
+##### - Dashboard Analytic;
+##### - Responsive App / MUI: Material UI;
+##### - User can see his jobs history in user dashboard;
+##### - Log In & Register Form with Formik and Yup for validation;
+##### - Modern authentication system with JWT and cookie;
+##### - Search job, filter jobs by category and location;
+##### - Apply for a job in the single page job, if the user is already log In;
+##### - Toast notification;
 
