@@ -46,7 +46,7 @@ const SidebarAdm = () => {
 
   return (
     <>
-      <Sidebar backgroundColor="#171f57" style={{ borderRightStyle: "none" }}>
+      <Sidebar backgroundColor="#251757" style={{ borderRightStyle: "none" }}>
         <Box
           sx={{
             display: "flex",
