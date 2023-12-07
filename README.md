@@ -7,6 +7,8 @@ This is a Full stack job App made with MERN Stack, MUI, Datagrid, cookie, react-
 
 ![My Image](frontend/src/images/dashboard.png)
 
+![My Image](frontend/src/images/jobs.png)
+
 
 
 # Features:
