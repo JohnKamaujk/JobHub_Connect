@@ -48,13 +48,17 @@ exports.signin = async (req, res, next) => {
 
 const sendTokenResponse = async (user, codeStatus, res) => {
   const token = await user.getJwtToken();
-  res
-    .status(codeStatus)
-    .cookie("token", token, { maxAge: 60 * 60 * 1000, httpOnly: true })
-    .json({
-      success: true,
-      role: user.role,
-    });
+  const cookieOptions = {
+    maxAge: 60 * 60 * 1000, // 1 hour
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production", // Set to true in production
+    sameSite: "None", // SameSite=None requires Secure=true
+  };
+
+  res.status(codeStatus).cookie("token", token, cookieOptions).json({
+    success: true,
+    role: user.role,
+  });
 };
 
 exports.logout = (req, res, next) => {
