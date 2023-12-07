@@ -21,10 +21,12 @@ import {
   USER_SIGNUP_SUCCESS,
 } from "../constants/userConstant";
 
+const apiURL = process.env.REACT_APP_API_URL;
+
 export const userSignInAction = (user) => async (dispatch) => {
   dispatch({ type: USER_SIGNIN_REQUEST });
   try {
-    const { data } = await axios.post("/api/signin", user);
+    const { data } = await axios.post(`${apiURL}/api/signin`, user);
     localStorage.setItem("userInfo", JSON.stringify(data));
     dispatch({
       type: USER_SIGNIN_SUCCESS,
@@ -44,7 +46,7 @@ export const userSignInAction = (user) => async (dispatch) => {
 export const userSignUpAction = (user) => async (dispatch) => {
   dispatch({ type: USER_SIGNUP_REQUEST });
   try {
-    const { data } = await axios.post("/api/signup", user);
+    const { data } = await axios.post(`${apiURL}/api/signup`, user);
 
     dispatch({
       type: USER_SIGNUP_SUCCESS,
@@ -65,7 +67,7 @@ export const userLogoutAction = () => async (dispatch) => {
   dispatch({ type: USER_LOGOUT_REQUEST });
   try {
     localStorage.removeItem("userInfo");
-    const { data } = await axios.get("/api/logout");
+    const { data } = await axios.get(`${apiURL}/api/logout`);
     dispatch({
       type: USER_LOGOUT_SUCCESS,
       payload: data,
@@ -84,7 +86,7 @@ export const userLogoutAction = () => async (dispatch) => {
 export const userProfileAction = () => async (dispatch) => {
   dispatch({ type: USER_LOAD_REQUEST });
   try {
-    const { data } = await axios.get("/api/me");
+    const { data } = await axios.get(`${apiURL}/api/me`);
     dispatch({
       type: USER_LOAD_SUCCESS,
       payload: data,
@@ -101,7 +103,7 @@ export const userProfileAction = () => async (dispatch) => {
 export const allUserAction = () => async (dispatch) => {
   dispatch({ type: ALL_USER_LOAD_REQUEST });
   try {
-    const { data } = await axios.get("/api/allusers");
+    const { data } = await axios.get(`${apiURL}/api/allusers`);
     dispatch({
       type: ALL_USER_LOAD_SUCCESS,
       payload: data,
@@ -118,7 +120,7 @@ export const allUserAction = () => async (dispatch) => {
 export const userApplyJobAction = (job) => async (dispatch) => {
   dispatch({ type: USER_APPLY_JOB_REQUEST });
   try {
-    const { data } = await axios.post("/api/user/jobhistory", job);
+    const { data } = await axios.post(`${apiURL}/api/user/jobhistory`, job);
 
     dispatch({
       type: USER_APPLY_JOB_SUCCESS,

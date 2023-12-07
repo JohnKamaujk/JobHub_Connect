@@ -16,10 +16,8 @@ const DashCategory = () => {
   }, []);
 
   const { jobType } = useSelector((state) => state.jobTypeAll);
-  console.log(jobType);
   let data = [];
   data = jobType !== undefined && jobType.length > 0 ? jobType : [];
-  console.log(data);
 
   //delete job by Id
   const deleteJobCategoryById = (e, id) => {

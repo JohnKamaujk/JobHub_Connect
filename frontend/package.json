@@ -12,6 +12,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.1.3",
+    "dotenv": "^16.3.1",
     "formik": "^2.4.5",
     "moment": "^2.29.4",
     "react": "^18.2.0",
@@ -54,6 +55,5 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@redux-devtools/extension": "^3.2.6"
-  },
-  "proxy": "https://jobhub-connect-api.onrender.com"
+  }
 }
