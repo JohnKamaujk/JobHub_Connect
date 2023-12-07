@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Box, Button, IconButton, Paper, Typography } from "@mui/material";
+import { Box, Button, Paper, Typography } from "@mui/material";
 import { DataGrid, gridClasses, GridToolbar } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
 import AddIcon from "@mui/icons-material/Add";
@@ -14,7 +14,7 @@ const DashUsers = () => {
     dispatch(allUserAction());
   }, []);
 
-  const { users, loading } = useSelector((state) => state.allUsers);
+  const { users } = useSelector((state) => state.allUsers);
   let data = [];
   data = users !== undefined && users.length > 0 ? users : [];
 

@@ -15,7 +15,7 @@ const DashCategory = () => {
     dispatch(jobTypeLoadAction());
   }, []);
 
-  const { jobType, loading } = useSelector((state) => state.jobTypeAll);
+  const { jobType } = useSelector((state) => state.jobTypeAll);
   console.log(jobType);
   let data = [];
   data = jobType !== undefined && jobType.length > 0 ? jobType : [];
