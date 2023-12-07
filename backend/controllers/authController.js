@@ -51,9 +51,9 @@ const sendTokenResponse = async (user, codeStatus, res) => {
   const cookieOptions = {
     maxAge: 60 * 60 * 1000, // 1 hour
     httpOnly: true,
-    secure: true,
-    sameSite: "none", // SameSite=None requires Secure=true
   };
+
+  cookieOptions.secure = true;
 
   res.status(codeStatus).cookie("token", token, cookieOptions).json({
     success: true,
