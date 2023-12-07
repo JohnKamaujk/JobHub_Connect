@@ -35,7 +35,7 @@ app.use(
     extended: true,
   })
 );
-app.use(cookieParser());
+
 app.use(
   cors({
     origin: [
@@ -45,6 +45,8 @@ app.use(
     credentials: true,
   })
 );
+
+app.use(cookieParser());
 
 app.use("/api", authRoutes);
 app.use("/api", userRoutes);
