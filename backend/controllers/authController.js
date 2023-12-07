@@ -51,7 +51,7 @@ const sendTokenResponse = async (user, codeStatus, res) => {
   const cookieOptions = {
     maxAge: 60 * 60 * 1000, // 1 hour
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production", // Set to true in production
+    secure: true,
     sameSite: "None", // SameSite=None requires Secure=true
   };
 
