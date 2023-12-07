@@ -36,7 +36,15 @@ app.use(
   })
 );
 app.use(cookieParser());
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "https://jobhub-connect-app.onrender.com",
+    ],
+    credentials: true,
+  })
+);
 
 app.use("/api", authRoutes);
 app.use("/api", userRoutes);
