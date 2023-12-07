@@ -52,7 +52,7 @@ const sendTokenResponse = async (user, codeStatus, res) => {
     maxAge: 60 * 60 * 1000, // 1 hour
     httpOnly: true,
     secure: true,
-    sameSite: "None", // SameSite=None requires Secure=true
+    sameSite: "none", // SameSite=None requires Secure=true
   };
 
   res.status(codeStatus).cookie("token", token, cookieOptions).json({
