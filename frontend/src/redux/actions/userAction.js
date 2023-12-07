@@ -86,7 +86,9 @@ export const userLogoutAction = () => async (dispatch) => {
 export const userProfileAction = () => async (dispatch) => {
   dispatch({ type: USER_LOAD_REQUEST });
   try {
-    const { data } = await axios.get(`${apiURL}/api/me`);
+    const { data } = await axios.get(`${apiURL}/api/me`, {
+      withCredentials: true,
+    });
     dispatch({
       type: USER_LOAD_SUCCESS,
       payload: data,
