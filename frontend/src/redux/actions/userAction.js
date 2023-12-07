@@ -21,6 +21,7 @@ import {
   USER_SIGNUP_SUCCESS,
 } from "../constants/userConstant";
 
+axios.defaults.withCredentials = true;
 const apiURL = process.env.REACT_APP_API_URL;
 
 export const userSignInAction = (user) => async (dispatch) => {

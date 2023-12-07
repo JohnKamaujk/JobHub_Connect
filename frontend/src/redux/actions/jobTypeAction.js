@@ -9,6 +9,7 @@ import {
   JOB_TYPE_LOAD_SUCCESS,
 } from "../constants/jobTypeConstant";
 
+axios.defaults.withCredentials = true;
 const apiURL = process.env.REACT_APP_API_URL;
 
 // load jobs type

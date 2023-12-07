@@ -15,9 +15,8 @@ import {
   REGISTER_JOB_SUCCESS,
 } from "../constants/jobConstant";
 
+axios.defaults.withCredentials = true;
 const apiURL = process.env.REACT_APP_API_URL;
-
-console.log(apiURL)
 
 export const jobLoadAction =
   (pageNumber, keyword = "", cat = "", location = "") =>
