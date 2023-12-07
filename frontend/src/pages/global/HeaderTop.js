@@ -8,8 +8,10 @@ import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
+import HomeIcon from "@mui/icons-material/Home";
 //import sidebar hook
 import { useProSidebar } from "react-pro-sidebar";
+import { useNavigate } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -55,6 +57,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const HeaderTop = () => {
   const { collapseSidebar } = useProSidebar();
+  const navigate = useNavigate();
+
+  const navigateHome = () => {
+    navigate("/");
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ boxShadow: 0 }}>
@@ -77,6 +85,16 @@ const HeaderTop = () => {
           >
             HR APP
           </Typography>
+          <IconButton
+            onClick={() => navigateHome()}
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            sx={{ mr: 2 }}
+          >
+            <HomeIcon />
+          </IconButton>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
