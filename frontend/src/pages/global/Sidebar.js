@@ -21,7 +21,7 @@ import {
   userLogoutAction,
   userProfileAction,
 } from "../../redux/actions/userAction";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import LoginIcon from "@mui/icons-material/Login";
 
 const SidebarAdm = () => {
@@ -29,7 +29,7 @@ const SidebarAdm = () => {
   const { palette } = useTheme();
   const { collapsed } = useProSidebar();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(userProfileAction());
@@ -40,7 +40,7 @@ const SidebarAdm = () => {
     dispatch(userLogoutAction());
     window.location.reload(true);
     setTimeout(() => {
-      navigate("/");
+      window.location.href = "/";
     }, 500);
   };
 
