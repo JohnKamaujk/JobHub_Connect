@@ -21,7 +21,6 @@ import {
   userLogoutAction,
   userProfileAction,
 } from "../../redux/actions/userAction";
-// import { useNavigate } from "react-router-dom";
 import LoginIcon from "@mui/icons-material/Login";
 
 const SidebarAdm = () => {

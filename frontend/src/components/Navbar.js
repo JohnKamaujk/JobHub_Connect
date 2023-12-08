@@ -12,7 +12,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import WorkIcon from "@mui/icons-material/Work";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useTheme } from "@emotion/react";
 import { useDispatch, useSelector } from "react-redux";
 import { userLogoutAction } from "../redux/actions/userAction";
@@ -21,11 +21,11 @@ import { DarkMode, LightMode } from "@mui/icons-material";
 const pages = ["Home", "Log In"];
 
 const Navbar = () => {
-  //show / hide button
+  //show or hide button
   const { userInfo } = useSelector((state) => state.signIn);
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { palette } = useTheme();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -50,7 +50,7 @@ const Navbar = () => {
     dispatch(userLogoutAction());
     window.location.reload(true);
     setTimeout(() => {
-      navigate("/");
+      window.location.href = "/";
     }, 500);
   };
 
