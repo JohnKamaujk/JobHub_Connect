@@ -16,10 +16,7 @@ const Footer = () => {
           alignItems: "center",
         }}
       >
-        <Box
-          component="span"
-          sx={{ color: palette.primary.main, fontWeight: 700 }}
-        >
+        <Box component="span" sx={{ color: "#ffffff", fontWeight: 700 }}>
           All rights reserved! {currentYear}.
         </Box>
       </Box>
