@@ -32,9 +32,9 @@ Frameworks and tools that were used to develop Foodie express.
 
 * [![Express][Express.js]][Express-url]
 * [![React][React.js]][React-url]
-* [![Typescript][Typescript.dev]][Typescript-url]
+* [![Javascript][Javascript.dev]][Javascript-url]
 * [![Mongo][Mongo.dev]][Mongo-url]
-* [![Tailwind][Tailwind.com]][Tailwind-url]
+* [![Material-UI][MaterialUI.com]][MaterialUI-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -111,7 +111,7 @@ _Below is an example of how you can instruct your audience on installing and set
 [React-url]: https://reactjs.org/
 [Express.js]: https://img.shields.io/badge/Express.js-35495E?style=for-the-badge&logo=express&logoColor=4FC08D
 [Express-url]: https://expressjs.com/
-[Typescript.dev]: https://img.shields.io/badge/Typescript-DD0031?style=for-the-badge&logo=typescript&logoColor=white
-[Typescript-url]: https://www.typescriptlang.org/
+[Javascript.dev]: https://img.shields.io/badge/Typescript-DD0031?style=for-the-badge&logo=typescript&logoColor=white
+[Javascript-url]: https://www.typescriptlang.org/
 [Mongo.dev]: https://img.shields.io/badge/Mongo-4A4A55?style=for-the-badge&logo=mongo&logoColor=FF3E00
 [Mongo-url]: https://mongo.dev/
