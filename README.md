@@ -72,11 +72,7 @@ _Below is an example of how you can instruct your audience on installing and set
    ```
 4. Create a dot env file inside the frontend folder and set up env variables
    ```sh
-   VITE_API_BASE_URL=
-   VITE_AUTH0_DOMAIN=
-   VITE_AUTH0_CLIENT_ID=
-   VITE_AUTH0_CALLBACK_URL=
-   VITE_AUTH0_AUDIENCE=
+    REACT_APP_API_URL(Deployed api-url) =
    ```
 5. cd into the backend folder
    ```sh
@@ -88,19 +84,13 @@ _Below is an example of how you can instruct your audience on installing and set
    ```
 4. Create a dot env file inside the backend folder and set up env variables
    ```sh
-   MONGODB_URI =
-   AUTH0_AUDIENCE=
-   AUTH0_ISSUER_BASE_URL=
-   CLOUDINARY_CLOUD_NAME=
-   CLOUDINARY_API_KEY=
-   CLOUDINARY_API_SECRET=
-   FRONTEND_URL=
-   STRIPE_API_KEY=
-   STRIPE_WEBHOOK_SECRET=
+    PORT = 
+    ATLAS_URI = 
+    JWT_SECRET = 
    ```
 5. Then run both the backend and frontend servers using
     ```sh
-    npm run dev
+    npm start
     ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
