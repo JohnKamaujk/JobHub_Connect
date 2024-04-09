@@ -45,6 +45,11 @@ const Navbar = () => {
     setAnchorElUser(null);
   };
 
+  const handleMenuItemClick = (url) => {
+    window.location.href = url; // Navigate to the specified URL
+    handleCloseUserMenu(); // Close the user menu
+  };
+
   // log out user
   const logOutUser = () => {
     dispatch(userLogoutAction());
@@ -183,7 +188,7 @@ const Navbar = () => {
                   },
                 },
               }}
-              sx={{ mt: "45px", p: 0 }}
+              sx={{ mt: "45px" }}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
@@ -198,45 +203,39 @@ const Navbar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              <MenuItem onClick={handleCloseUserMenu}>
-                <Typography textAlign="center">
-                  <Link
-                    style={{
-                      textDecoration: "none",
-                      color: palette.secondary.main,
-                    }}
-                    to="/admin/dashboard"
-                  >
-                    Admin Dashboard
-                  </Link>
+              <MenuItem onClick={() => handleMenuItemClick("/admin/dashboard")}>
+                <Typography
+                  textAlign="center"
+                  style={{
+                    textDecoration: "none",
+                    color: palette.secondary.main,
+                  }}
+                >
+                  Admin Dashboard
                 </Typography>
               </MenuItem>
-              <MenuItem onClick={handleCloseUserMenu}>
-                <Typography textAlign="center">
-                  <Link
-                    style={{
-                      textDecoration: "none",
-                      color: palette.secondary.main,
-                    }}
-                    to="/user/dashboard"
-                  >
-                    User Dashboard
-                  </Link>
+              <MenuItem onClick={() => handleMenuItemClick("/user/dashboard")}>
+                <Typography
+                  textAlign="center"
+                  style={{
+                    textDecoration: "none",
+                    color: palette.secondary.main,
+                  }}
+                >
+                  User Dashboard
                 </Typography>
               </MenuItem>
 
               {!userInfo ? (
-                <MenuItem onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">
-                    <Link
-                      style={{
-                        textDecoration: "none",
-                        color: palette.secondary.main,
-                      }}
-                      to="/login"
-                    >
-                      Log In
-                    </Link>
+                <MenuItem onClick={() => handleMenuItemClick("/login")}>
+                  <Typography
+                    textAlign="center"
+                    style={{
+                      textDecoration: "none",
+                      color: palette.secondary.main,
+                    }}
+                  >
+                    Log In
                   </Typography>
                 </MenuItem>
               ) : (
