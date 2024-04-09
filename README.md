@@ -112,6 +112,6 @@ _Below is an example of how you can instruct your audience on installing and set
 [Express.js]: https://img.shields.io/badge/Express.js-35495E?style=for-the-badge&logo=express&logoColor=4FC08D
 [Express-url]: https://expressjs.com/
 [Javascript.dev]: https://img.shields.io/badge/Javascript-DD0031?style=for-the-badge&logo=javascript&logoColor=white
-[Javascript-url]: https://www.javascript.org/
+[Javascript-url]: https://www.javascript.com/
 [Mongo.dev]: https://img.shields.io/badge/Mongo-4A4A55?style=for-the-badge&logo=mongo&logoColor=FF3E00
 [Mongo-url]: https://mongo.dev/
