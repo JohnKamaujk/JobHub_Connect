@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useNavigate } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -25,7 +26,7 @@ const Navbar = () => {
   const { userInfo } = useSelector((state) => state.signIn);
 
   const dispatch = useDispatch();
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const { palette } = useTheme();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -46,7 +47,7 @@ const Navbar = () => {
   };
 
   const handleMenuItemClick = (url) => {
-    window.location.href = url; // Navigate to the specified URL
+    navigate(url); // Navigate to the specified URL using React Router
     handleCloseUserMenu(); // Close the user menu
   };
 
