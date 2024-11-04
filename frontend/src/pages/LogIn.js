@@ -38,7 +38,7 @@ const LogIn = () => {
     // if (isAuthenticated) {
     //     navigate('/user/dashboard');
     // }
-  }, [isAuthenticated, navigate, userInfo?.role]);
+  }, [isAuthenticated]);
 
   const formik = useFormik({
     initialValues: {
